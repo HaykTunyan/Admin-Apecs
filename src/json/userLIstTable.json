@@ -1,0 +1,163 @@
+[
+    {
+        "id": 0,
+        "userId": 10101,
+        "name": "Olivia Rhye",
+        "status": "active",
+        "description": "Category description (if applicable)",
+        "email": "olivia@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]            
+    },
+    {
+        "id": 1,
+        "userId": 10102,
+        "name": "Phoenix Baker",
+        "status": "active",
+        "description": "Category description (if applicable)",
+        "email": "phoenix@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]               
+    },
+    {
+        "id": 2,
+        "userId": 10103,
+        "name": "Lana Steiner",
+        "status": "inactive",
+        "description": "Category description (if applicable)",
+        "email": "lana@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]                  
+    },
+    {
+        "id": 3,
+        "userId": 10104,
+        "name": "Demi Wilkinson",
+        "status": "active",
+        "description": "Category description (if applicable)",
+        "email": "demi@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]                
+    },
+    {
+        "id": 4,
+        "userId": 10105,
+        "name": "Candice Wu",
+        "status": "inactive",
+        "description": "Category description (if applicable)",
+        "email": "candice@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]                 
+    },
+    {
+        "id": 5,
+        "userId": 10106,
+        "name": "Natali Craig",
+        "status": "active",
+        "description": "Category description (if applicable)",
+        "email": "natali@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]                
+    },
+    {
+        "id": 6,
+        "userId": 10107,
+        "name": "Drew Cano",
+        "status": "active",
+        "description": "Category description (if applicable)",
+        "email": "drew@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]                
+    },
+    {
+        "id": 7,
+        "userId": 10108,
+        "name": "Orlando Diggs",
+        "status": "active",
+        "description": "Category description (if applicable)",
+        "email": "orlando@apecs.com",
+        "roles": [
+            {
+                "id": "5014f7c1-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Product manager",
+                "description": "Product manager"
+            },
+            {
+                "id": "5065664-71f8-4da6-9c0d-06608d6b0cfe",
+                "name": "Modular extension",
+                "description": "Modular extension"
+            }
+        ]                
+    }
+    
+]

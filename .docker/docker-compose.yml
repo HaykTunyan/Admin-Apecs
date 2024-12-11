@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: apecs-admin-$UPSTREAM_PROJECT_NAME-$CI_COMMIT_TAG
+    image: $RELEASE_IMAGE
+    ports:
+      - 127.0.0.1:$FRONTEND_HOST_PORT:$FRONTEND_CONTAINER_PORT

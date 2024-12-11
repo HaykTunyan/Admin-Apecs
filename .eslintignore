@@ -1,0 +1,4 @@
+# Ignore Files
+src/containers/management/addPermisionUser.tsx
+src/containers/management/editRoleUser.tsx
+src/containers/management/addRoleUser.tsx

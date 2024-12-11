@@ -1,0 +1,52 @@
+[
+    {
+        "id": 0,
+        "value": "Product Management",
+        "label" : "Product Management"
+    },
+    {
+        "id": 1,
+        "value": "Category Management",
+        "label" : "Category Management"
+    },
+    {
+        "id": 2,
+        "value": "Marketing",
+        "label" : "Marketing"
+    },
+    {
+        "id": 3,
+        "value": "Logistics",
+        "label" : "Logistics"
+    },
+    {
+        "id": 4,
+        "value": "Order Management",
+        "label" : "Order Management"
+    },
+    {
+        "id": 5,
+        "value": "Inventory Managemen",
+        "label" : "Inventory Management"
+    },
+    {
+        "id": 6,
+        "value": "Customer Support",
+        "label" : "Customer Support"
+    },
+    {
+        "id": 7,
+        "value": "IT Support",
+        "label" : "IT Support"
+    },
+    {
+        "id": 8,
+        "value" : "Administrator",
+        "label": "Administrator"
+    },
+    {
+        "id": 9,
+        "value" : "HR",
+        "label": "HR"
+    }
+]

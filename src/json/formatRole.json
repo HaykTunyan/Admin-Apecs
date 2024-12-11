@@ -1,0 +1,180 @@
+[
+    {
+        "title": "ADMIN",
+        "info": [
+            {
+                "id": "dc57d985-a5e8-4b66-be80-a8046ef50048",
+                "type": "READ_ADMIN",
+                "description": "Can read any admins",
+                "checked": false
+            },
+            {
+                "id": "acc86e79-07f9-4735-b823-70a458285feb",
+                "type": "CREATE_ADMIN",
+                "description": "Can create new admins",
+                "checked": false
+            },
+            {
+                "id": "0ce561a8-585e-485e-8598-2eb86d42a71a",
+                "type": "UPDATE_ADMIN",
+                "description": "Can update any admins",
+                "checked": false
+            },
+            {
+                "id": "19f9585c-005e-4a58-9271-7f8a3e8f739a",
+                "type": "DELETE_ADMIN",
+                "description": "Can delete any admins",
+                "checked": false
+            }            
+        ]
+    },
+    {
+        "title": "ATTRIBUTE",
+        "info": [
+            {
+                "id": "c237ecdb-8b59-4317-88f7-607036786624",
+                "type": "READ_ATTRIBUTE",
+                "description": "Can read any attribute",
+                "checked": false
+            },
+            {
+                "id": "17949e7e-a13a-475b-9f4c-63d8e1b7bde3",
+                "type": "CREATE_ATTRIBUTE",
+                "description": "Can create new attribute",
+                "checked": false
+            },
+            {
+                "id": "2c515cc1-bf4c-4ef9-a36e-5f6beef13f87",
+                "type": "UPDATE_ATTRIBUTE",
+                "description": "Can update any attribute",
+                "checked": false
+            },
+            {
+                "id": "9c1b84b6-9481-4969-a42f-31d36879aacc",
+                "type": "DELETE_ATTRIBUTE",
+                "description": "Can delete any attribute",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "title": "CATEGORY",
+        "info": [
+            {
+                "id": "2552b47c-3779-4620-9236-6fbc6e04300a",
+                "type": "READ_CATEGORY",
+                "description": "Can read any category",
+                "checked": false
+            },
+            {
+                "id": "37081d78-2085-439c-9926-c21d78ceb7e9",
+                "type": "CREATE_CATEGORY",
+                "description": "Can create new category",
+                "checked": false
+            },
+            {
+                "id": "80e61eef-efe2-4a17-b9b4-fa52ba4387ca",
+                "name": "UPDATE_CATEGORY",
+                "description": "Can update any category",
+                "checked": false
+            },
+            {
+                "id": "ba8c59d1-288d-466e-bdc8-e671feb68766",
+                "type": "DELETE_CATEGORY",
+                "description": "Can delete any category",
+                "checked": false
+            }
+        ]
+    },
+     {
+        "title": "PRODUCT",
+        "info": [
+            {
+                "id": "b12c4139-6daf-446d-a282-b94a8b2c9bc6",
+                "type": "READ_PRODUCT",
+                "description": "Can read any product",
+                "checked": false,
+                "name": "View"
+            },
+            {
+                "id": "727a7369-d4fb-4e59-9f56-f1e14ed1a5f1",
+                "type": "CREATE_PRODUCT",
+                "description": "Can create new product",
+                "checked": false,
+                "name": "Add"
+            },
+            {
+                "id": "a9fc5c1d-904e-4dc3-a2c9-d92279e8df93",
+                "type": "UPDATE_PRODUCT",
+                "description": "Can update any product",
+                "checked": false,
+                "name": "Edit"
+            },
+            {
+                "id": "c9f0a291-b1df-4eca-a34f-64696906ead4",
+                "type": "DELETE_PRODUCT",
+                "description": "Can delete any product",
+                "checked": false,
+                "name": "Delete"
+            }
+        ]
+    },
+    {
+        "title": "PRODUCT",
+        "info": [
+            {
+                "id": "b12c4139-6daf-446d-a282-b94a8b2c9bc6",
+                "type": "READ_PRODUCT",
+                "description": "Can read any product",
+                "checked": false
+            },
+            {
+                "id": "727a7369-d4fb-4e59-9f56-f1e14ed1a5f1",
+                "type": "CREATE_PRODUCT",
+                "description": "Can create new product",
+                "checked": false
+            },
+            {
+                "id": "a9fc5c1d-904e-4dc3-a2c9-d92279e8df93",
+                "type": "UPDATE_PRODUCT",
+                "description": "Can update any product",
+                "checked": false
+            },
+            {
+                "id": "c9f0a291-b1df-4eca-a34f-64696906ead4",
+                "type": "DELETE_PRODUCT",
+                "description": "Can delete any product",
+                "checked": false
+            }
+        ]
+    },
+    {
+        "title": "ROLE",
+        "info": [
+            {
+                "id": "d18725e0-215c-4c6b-8784-68624c9e6d9a",
+                "type": "READ_ROLE",
+                "description": "Can read any roles",
+                "checked": false
+            },
+            {
+                "id": "f5dbc6bf-ef81-4512-b51b-9f6f73fe89fb",
+                "type": "CREATE_ROLE",
+                "description": "Can create new roles",
+                "checked": false
+            },
+            {
+                "id": "0b9b4718-7327-443a-b048-8fdc5d15a6f1",
+                "type": "UPDATE_ROLE",
+                "description": "Can update any roles",
+                "checked": false
+            },
+            {
+                "id": "e25cf6ee-36e4-4e5f-a082-0e5f72dfd5f2",
+                "type": "DELETE_ROLE",
+                "description": "Can delete any roles",
+                "checked": false
+            }
+        ]
+    }
+]

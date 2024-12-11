@@ -1,0 +1,60 @@
+stages:
+  - build
+  - deploy
+
+image: docker/compose
+
+.common-build-rules: &common-build-rules
+  rules:
+    - if: $CI_COMMIT_TAG  =~ /^(prod|dev)$/
+      variables:
+        DEPLOY_ENV: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH =~ /^(master)$/
+      variables:
+        DEPLOY_ENV: prod
+    - if: $CI_COMMIT_BRANCH =~ /^(develop)$/
+      variables:
+        DEPLOY_ENV: dev
+    - if: $CI_PIPELINE_SOURCE == "push"
+      variables:
+        DEPLOY_ENV: dev
+
+.frontend-build:
+  stage: build
+  resource_group: $CI_JOB_NAME
+  environment:
+    name: $DEPLOY_ENV
+  tags:
+    - deployment
+  before_script:
+    - echo $CI_REGISTRY_PASSWORD | docker login $CI_REGISTRY --username $CI_REGISTRY_USER --password-stdin
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/$APP_NAME:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/$APP_NAME:latest-$DEPLOY_ENV .
+    - docker push $CI_REGISTRY_IMAGE/$APP_NAME:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/$APP_NAME:latest-$DEPLOY_ENV
+  <<: *common-build-rules
+
+
+frontend:build:
+ extends: [ .frontend-build ]
+ variables:
+   APP_NAME: frontend
+
+frontend-deploy:
+  stage: deploy
+  resource_group: $CI_JOB_NAME
+  environment:
+    name: $CI_COMMIT_TAG
+  variables:
+    RELEASE_IMAGE: $CI_REGISTRY_IMAGE/frontend:latest-$CI_COMMIT_TAG
+    UPSTREAM_PROJECT_NAME: $CI_PROJECT_NAME
+    REGISTRY: $CI_REGISTRY
+  tags:
+    - deployment
+  before_script:
+    - echo $GITLAB_RUNNER_DEPLOY_TOKEN | docker login $REGISTRY --username $GITLAB_RUNNER_DEPLOY_USERNAME --password-stdin
+  script:
+    - docker-compose -f .docker/docker-compose.yml -p apecs-admin-$UPSTREAM_PROJECT_NAME-$CI_COMMIT_TAG up -d --remove-orphans
+    - docker image prune -f
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^(prod|dev)$/
