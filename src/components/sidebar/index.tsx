@@ -125,8 +125,11 @@ const Sidebar: FC<SidebarProps> = ({
                     >
                       <li
                         className={`flex items-center px-3 py-2 gap-3 font-normal hover:bg-hover-sidebar text-sm rounded-sm 
-                          ${pathname === "/dashboard" ? "bg-hover-sidebar" : ""} 
-                          ${sideOpen ? " cursor-pointer " : "justify-center"} `}>
+                          ${
+                            pathname === "/dashboard" ? "bg-hover-sidebar" : ""
+                          } 
+                          ${sideOpen ? " cursor-pointer " : "justify-center"} `}
+                      >
                         <Image
                           src="/icons/userManagement/home-line.svg"
                           alt="Home-Line"
@@ -169,8 +172,13 @@ const Sidebar: FC<SidebarProps> = ({
                       <li
                         className={`flex items-center px-3 py-2 hover:bg-hover-sidebar font-normal text-sm rounded-sm 
                           ${pathname === "/orders" ? "bg-hover-sidebar" : ""} 
-                          ${sideOpen ? "gap-3  cursor-pointer" : "justify-center"} 
-                          `}>
+                          ${
+                            sideOpen
+                              ? "gap-3  cursor-pointer"
+                              : "justify-center"
+                          } 
+                          `}
+                      >
                         <Image
                           src="/icons/userManagement/bar-chart-square.svg"
                           alt="Bar-Chart-Square"
@@ -336,9 +344,12 @@ const Sidebar: FC<SidebarProps> = ({
                     >
                       <li
                         className={`flex items-center px-3 py-2 gap-3 hover:bg-hover-sidebar font-normal text-sm rounded-sm 
-                          ${pathname === "/dashboard" ? "bg-hover-sidebar" : ""} 
+                          ${
+                            pathname === "/dashboard" ? "bg-hover-sidebar" : ""
+                          } 
                           ${sideOpen ? "cursor-pointer" : "justify-center"} 
-                          `}>
+                          `}
+                      >
                         <Image
                           src="/icons/userManagement/users.svg"
                           alt="Users"
@@ -380,7 +391,9 @@ const Sidebar: FC<SidebarProps> = ({
                     >
                       <li
                         className={`flex items-center px-3 py-2 gap-3 hover:bg-hover-sidebar font-normal text-sm rounded-sm 
-                          ${pathname === "/inventory" ? "bg-hover-sidebar" : ""} 
+                          ${
+                            pathname === "/inventory" ? "bg-hover-sidebar" : ""
+                          } 
                           ${sideOpen ? "cursor-pointer  " : "justify-center"} 
                   `}
                       >
@@ -459,7 +472,7 @@ const Sidebar: FC<SidebarProps> = ({
                 className={`flex items-center px-3 py-2 gap-3 hover:bg-hover-sidebar font-normal text-sm rounded-sm 
                   ${pathname === "/setting" ? "bg-hover-sidebar" : ""} 
                   ${sideOpen ? "cursor-pointer" : "justify-center"} `}
-                  >
+              >
                 <Image
                   src="/icons/userManagement/settings.svg"
                   alt="Settings"

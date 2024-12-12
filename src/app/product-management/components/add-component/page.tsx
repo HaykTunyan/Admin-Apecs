@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getCategoryComponentAPI } from "@/service/product-management/category-api/getCategory";
 import {
-  // createComponentAPI,
   createComponent,
 } from "@/service/product-management/component-api/getComponent";
 import AllertComponent from "@/components/allertComponent";
@@ -65,11 +64,6 @@ const AddComponent: FC = () => {
       formErrors.name = "Name is required and special characters or numbers.";
       isValid = false;
     }
-
-    // if (!formData?.category_id) {
-    //   formErrors.category_id = "Category is required. Please select one.";
-    //   isValid = false;
-    // }
 
     // @ts-ignore
     setErrors(formErrors);
@@ -136,56 +130,6 @@ const AddComponent: FC = () => {
       setValidationActive(false);
     }
   };
-
-  // const handleSaveInfo = async () => {
-  //   const isFormValid = validateForm();
-  //   setValidationActive(isFormValid);
-
-  //   if (!categoryItem?.id) {
-  //     setValidationActive(false);
-  //     setErrorCategory(true);
-  //   }
-
-  //   if (isFormValid && categoryItem?.id) {
-  //     const sendParams = {
-  //       category_id: formData.category_id,
-  //       barcode: formData.barcode,
-  //       price: formData.price.toString(),
-  //       name: formData.name,
-  //       description: formData.description,
-  //       image: categoryImage?.name,
-  //     };
-
-  //     try {
-  //       const response = await createComponentAPI(sendParams as any);
-  //       if (response) {
-  //         setShowAllert("success");
-  //         router.push("/product-management/components/?activeTab=1");
-  //       }
-  //     } catch (error: any) {
-  //       setShowAllert("error");
-
-  //       if (error?.response?.data?.message) {
-  //         if (error?.response?.data?.message) {
-  //           setErrorMessage(error?.response?.data?.message);
-  //         }
-  //       }
-  //       if (
-  //         error.response &&
-  //         error.response.data &&
-  //         error.response.data.message
-  //       ) {
-  //         setApiError(error.response.data.message);
-  //         if (apiError) {
-  //         }
-  //       } else {
-  //         setApiError("An unknown error occurred");
-  //       }
-  //     }
-  //   } else {
-  //     setApiError("Please fill in all the required fields");
-  //   }
-  // };
 
   const handleSaveInfo = () => {
     const isFormValid = validateForm();

@@ -33,8 +33,6 @@ const AddRole: FC = () => {
   const router = useRouter();
   const [validationActive, setValidationActive] = useState<boolean>(false);
   const [apiError, setApiError] = useState<any>("");
-  // const [errorShow, setErrorShow] = useState(true);
-  //
   const [permisionError, setPermisionError] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [showAllert, setShowAllert] = useState<string>("");
@@ -85,13 +83,6 @@ const AddRole: FC = () => {
       isValid = false;
     }
 
-    // if (!formData.permissions || formData.permissions.length === 0) {
-    //   formErrors.permissions = "Permissions are required";
-    //   isValid = false;
-    // } else {
-    //   formErrors.permissions = "";
-    // }
-
     setErrors(formErrors);
     return isValid;
   };
@@ -104,8 +95,6 @@ const AddRole: FC = () => {
 
     setErrors({ ...errors, [field]: "" });
 
-    // const isFormValid = validateForm();
-    // setValidationActive(isFormValid);
   };
 
   const handleChnagePermision = (selectedPermissions: any) => {
@@ -114,34 +103,19 @@ const AddRole: FC = () => {
       permissions: selectedPermissions,
     }));
 
-    // if (selectedPermissions.length > 0) {
-    //   setErrors((prevErrors) => ({ ...prevErrors, permissions: "" }));
-    // }
 
     if (selectedPermissions?.length > 0) {
       setPermisionError(false);
     } else {
       setPermisionError(true);
     }
-
-    // const isFormValid = validateForm();
-    // setValidationActive(isFormValid);
   };
 
   const handleOpenPermision = () => {
     setIsModalOpen(true);
   };
 
-  // const handleCancel = () => {
-  //   setFormData({
-  //     roleName: "",
-  //     description: "",
-  //     permissions: [],
-  //   });
-  // };
-
   const handleBack = () => {
-    // router.back();
     router.push("/management?activeTab=1");
   };
 
@@ -152,11 +126,9 @@ const AddRole: FC = () => {
 
     if (formData.permissions?.length === 0) {
       setPermisionError(true);
-      // setValidationActive(true)
     }
 
     if (isFormValid && formData.permissions?.length > 0) {
-      // setValidationActive(false)
     }
 
     const userInfo = {
@@ -195,7 +167,6 @@ const AddRole: FC = () => {
         } else {
           setApiError("An unknown error occurred");
         }
-        // setErrorShow(true);
       }
     } else {
     }
@@ -222,10 +193,8 @@ const AddRole: FC = () => {
 
     if (permissionList?.length === 0) {
       setPermisionError(true);
-      // setValidationActive(true)
     } else {
       setPermisionError(false);
-      // setValidationActive(false)
     }
   }, [isModalOpen, permissionList]);
 

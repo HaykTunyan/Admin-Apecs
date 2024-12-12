@@ -5,17 +5,14 @@ import InputForm from "@/components/input";
 import Autocomplete from "@/components/autocomplete";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-// import PhoneInputForm from "@/components/phoneInput";
 import AddPermisionUser from "@/containers/management/addPermisionUser";
 import { PermistionRole } from "@/json";
 import { createUserAPI } from "@/service/user/userAPI";
 import { getRoleAPI } from "@/service/role/roleAPI";
 import { getRoleTypes } from "@/hooks/roleTypes";
-// import { PhoneNumberUtil } from "google-libphonenumber";
 import AllertComponent from "@/components/allertComponent";
 import { useRouter } from "next/navigation";
 import RoleComplete from "@/components/roleComplete";
-// import AddRoleUser from "@/containers/management/addRoleUser";
 import Link from "next/link";
 import PhoneCountryComponent from "@/components/phoneCountry";
 // API
@@ -47,9 +44,7 @@ const AddUser: FC = () => {
   //@ts-ignore
   const enabledAddUser = accessPermissions.includes("CREATE_ADMIN");
 
-  // const phoneUtil = PhoneNumberUtil.getInstance();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  // const [isRoleModal, setIsRoleModal] = useState<boolean>(false);
   const [apiError, setApiError] = useState<any>("");
   const [errorRole, setErrorRole] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<any>("");
@@ -59,8 +54,6 @@ const AddUser: FC = () => {
   // Form State
   const [permissionList, setPermisionList] = useState<any>(null);
   const [newPermison, setNewPermision] = useState<PermissionType[]>([]);
-  // const [rolesList, setRolesList] = useState<any>(null);
-  // const [newRole, setNewRole] = useState<PermissionType[] | null>(null);
   const [roleData, setRoleData] = useState<any | null>(null);
 
   const [formData, setFormData] = useState({
@@ -120,16 +113,6 @@ const AddUser: FC = () => {
       isValid = false;
     }
 
-    // Validate roles
-    //   if (!formData.roles || formData.roles.length === 0) {
-    //     formErrors.roles = "Please assign at least one role to the user.";
-    //     isValid = false; // Set isValid to false if no roles are assigned
-    // } else {
-    //     // Clear roles error if roles are assigned
-    //     formErrors.roles = "";
-    //     isValid = true;
-    // }
-
     // @ts-ignore
     setErrors(formErrors);
     return isValid;
@@ -161,17 +144,11 @@ const AddUser: FC = () => {
       setErrorRole(true);
       setValidationActive(true);
     }
-    // const isFormValid = validateForm();
-    // setValidationActive(isFormValid);
   };
 
   const handleOpenPermision = () => {
     setIsModalOpen(true);
   };
-
-  // const handleOpenRole = () => {
-  //   setIsRoleModal(true);
-  // };
 
   const handleSaveInfo = async () => {
     const isFormValid = validateForm();
@@ -206,15 +183,9 @@ const AddUser: FC = () => {
         setShowAllert("error");
 
         if (error?.response?.data?.message) {
-          // console.log(" error?.response?.data ", error?.response?.data)
           if (error?.response?.data?.message) {
             setErrorMessage(error?.response?.data?.message);
           }
-          // if (error?.response?.data?.message.length > 3) {
-          //   setErrorMessage(error?.response?.data?.message[0]);
-          // } else {
-          //   setErrorMessage(error?.response?.data?.message);
-          // }
         }
 
         if (
@@ -233,20 +204,7 @@ const AddUser: FC = () => {
     }
   };
 
-  // const handleCancel = () => {
-  //   setFormData({
-  //     fullName: "",
-  //     sureName: "",
-  //     emailValue: "",
-  //     phoneValue: "",
-  //     roles: [],
-  //     permissions: [],
-  //     activeStatus: false,
-  //   });
-  // };
-
   const handleBack = () => {
-    // router.back();
     router.push("/management?activeTab=0");
   };
 
@@ -264,18 +222,6 @@ const AddUser: FC = () => {
         permissions: transformedPermissions,
       }));
     }
-    // if (rolesList?.length) {
-    //   setRolesList(rolesList);
-
-    //   const transdormedRoles = rolesList.map((permission: { id: any }) => ({
-    //     id: permission.id,
-    //   }));
-
-    //   setFormData((prevFormRoles) => ({
-    //     ...prevFormRoles,
-    //     roles: transdormedRoles,
-    //   }));
-    // }
   }, [isModalOpen, permissionList]);
 
   useEffect(() => {
@@ -423,40 +369,6 @@ const AddUser: FC = () => {
             />
           </div>
         </div>
-        {/* Old Version Component . Don't Delete It */}
-        {/* <div className="pt-4" />
-        <div className="flex flex-row gap-8 w-full">
-          <div className="flex flex-col w-3/12"></div>
-          <div className="w-5/12">
-            <div className="flex flex-row  gap-4">
-              <div className="w-full">
-                <PhoneInputForm
-                  labelTitle="Phone number (*)"
-                  placeholder="e.g. +44 7911 123456"
-                  value={formData.phoneValue}
-                  changeValue={(value: string | boolean) =>
-                    handleChange("phoneValue", value)
-                  }
-                  isError={!!errors.phoneValue}
-                  errorMessage={errors.phoneValue}
-                />
-              </div>
-
-              <div className="pt-9 hidden">
-                <button
-                  type="button"
-                  onClick={addMorePhone}
-                  className="rounded-full border border-grey-border w-9 h-9 flex justify-center items-center "
-                >
-                  <img
-                    src="/icons/userManagement/plus-icon.svg"
-                    alt="Plus-Icon"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         {/* New Input Component */}
         <div className="pt-4" />
@@ -545,39 +457,6 @@ const AddUser: FC = () => {
             </p>
           </div>
         </div>
-        {/* <div className="pt-5" /> */}
-        {/* <div className="bg-utility-gray-200 h-[1px] w-full" /> */}
-        {/* <div className="pt-5" /> */}
-        {/* Status */}
-        {/* <div className="flex flex-row gap-8 w-full">
-          <div className="flex flex-col w-3/12">
-            <div className="">
-              <p className="text-utility-gray-700 font-medium text-base leading-5">
-                {" "}
-                Status
-              </p>
-              <p className="text-tertiary font-normal text-sm leading-4.5">
-                {" "}
-                Activating a status adjusts the user&apos;s login access,
-                feature availability, and permitted actions.
-              </p>
-            </div>
-          </div>
-          <div className="w-5/12">
-            <label className="inline-flex items-center me-5 cursor-pointer">
-              <input
-                type="checkbox"
-                className="sr-only peer"
-                checked={formData.activeStatus}
-                onChange={handleSwitchChange}
-              />
-              <div className="relative w-9 h-5 bg-disabled-subtle rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand-solid"></div>
-              <span className="ms-3 text-base font-medium leading-5 text-grey-light-700">
-                Active
-              </span>
-            </label>
-          </div>
-        </div> */}
       </div>
       <div className="mt-6" />
       <div className="flex flex-row justify-end">
@@ -611,13 +490,6 @@ const AddUser: FC = () => {
         setNewPermision={setNewPermision}
         itemPermisinInfo={newPermison}
       />
-      {/* <AddRoleUser
-        isOpen={isRoleModal}
-        onClose={() => setIsRoleModal(false)}
-        setRolesList={setRolesList}
-        setNewRole={setNewRole}
-        itemRoleInfo={newRole}
-      /> */}
       {showAllert === "error" ? (
         <AllertComponent
           type={"error"}

@@ -13,7 +13,6 @@ import PriceInputForm from "@/components/priceInput";
 import DeleteModal from "@/containers/management/deleteModal";
 import {
   getComponentByIdAPI,
-  // updateComponentAPI,
   updateComponent,
 } from "@/service/product-management/component-api/getComponent";
 

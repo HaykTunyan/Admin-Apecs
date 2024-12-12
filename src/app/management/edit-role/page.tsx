@@ -93,11 +93,6 @@ const EditRole: FC = () => {
       isValid = false;
     }
 
-    // if (!formData.permissions) {
-    //   formErrors.permissions = "Permissions is required";
-    //   isValid = false;
-    // }
-
     setErrors(formErrors);
     return isValid;
   };
@@ -110,7 +105,6 @@ const EditRole: FC = () => {
 
     setErrors({ ...errors, [field]: "" });
 
-    // const isFormValid = validateForm();
   };
 
   const handleOpenPermision = () => {
@@ -131,7 +125,6 @@ const EditRole: FC = () => {
 
     if (formData.permissions?.length === 0) {
       setPermisionError(true);
-      // setValidationActive(true)
     }
 
     const userInfo = {

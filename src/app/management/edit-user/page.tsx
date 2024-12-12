@@ -3,7 +3,6 @@
 import React, { FC, Fragment, useState, useEffect } from "react";
 import InputForm from "@/components/input";
 import Autocomplete from "@/components/autocomplete";
-// import PhoneInputForm from "@/components/phoneInput";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import EditPermisionUser from "@/containers/management/editPermisionUser";
@@ -114,38 +113,14 @@ const EditUser: FC = () => {
       isValid = false;
     }
 
-    // const phonePattern = /^\d{10}$/;
-    // if (!formData.phoneValue || !phonePattern.test(formData.phoneValue)) {
-    //   formErrors.phoneValue = "Phone number must include a country code (e.g.)";
-    //   isValid = false;
-    // }
-
     if (!formData.phoneValue) {
       formErrors.phoneValue = "Phone number must include a country code (e.g.)";
       isValid = false;
     }
-    // else {
-    //     try {
-    //         const phoneNumber = phoneUtil.parseAndKeepRawInput(formData.phoneValue, 'US');
-    //         if (!phoneUtil.isValidNumber(phoneNumber)) {
-    //             formErrors.phoneValue = 'Please enter a valid phone number.';
-    //             isValid = false;
-    //         } else {
-    //             // Format the phone number if needed
-    //             const formattedNumber = phoneUtil.format(phoneNumber, PhoneNumberFormat.INTERNATIONAL);
-    //             console.log('Formatted Phone Number:', formattedNumber);
-    //         }
-    //     } catch (error) {
-    //         formErrors.phoneValue = 'Please enter a valid phone number.';
-    //         isValid = false;
-    //     }
-    // }
 
     setErrors(formErrors);
     return isValid;
   };
-
-  // const addMorePhone = () => {};
 
   const handleChange = (field: string, value: string | boolean) => {
     setFormData({
@@ -169,13 +144,6 @@ const EditUser: FC = () => {
     }
   };
 
-  // const handleSwitchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setFormData({
-  //     ...formData,
-  //     activeStatus: event.target.checked,
-  //   });
-  // };
-
   const handleDelete = (itemList: any) => {
     setItemInformation(itemList);
     setTitleModal("Delete role ‘Order Manager’");
@@ -189,10 +157,6 @@ const EditUser: FC = () => {
   const handleOpenPermision = () => {
     setIsModalPermision(true);
   };
-
-  // const handleOpenRole = () => {
-  //   setIsRoleModal(true);
-  // };
 
   const handleEditInfo = async () => {
     const isFormValid = validateForm();
@@ -255,7 +219,6 @@ const EditUser: FC = () => {
   };
 
   const handleBack = () => {
-    // router.back();
     router.push("/management?activeTab=0");
   };
 
@@ -451,40 +414,6 @@ const EditUser: FC = () => {
               />
             </div>
           </div>
-          {/* Old Version Component, Don't Delete It */}
-          {/* <div className="pt-4" />
-          <div className="flex flex-row gap-8 w-full">
-            <div className="flex flex-col w-3/12"></div>
-            <div className="w-5/12">
-              <div className="flex flex-row  gap-4">
-                <div className="w-full">
-                  <PhoneInputForm
-                    labelTitle="Phone number (*)"
-                    placeholder="e.g. +44 7911 123456"
-                    value={formData.phoneValue}
-                    changeValue={(value: string | boolean) =>
-                      handleChange("phoneValue", value)
-                    }
-                    isError={!!errors.phoneValue}
-                    errorMessage={errors.phoneValue}
-                  />
-                </div>
-
-                <div className="pt-9 hidden">
-                  <button
-                    type="button"
-                    onClick={addMorePhone}
-                    className="rounded-full border border-grey-border w-9 h-9 flex justify-center items-center "
-                  >
-                    <img
-                      src="/icons/userManagement/plus-icon.svg"
-                      alt="Plus-Icon"
-                    />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> */}
 
           {/* New Input Component */}
           <div className="pt-4" />
@@ -579,35 +508,7 @@ const EditUser: FC = () => {
           <div className="bg-utility-gray-200 h-[1px] w-full" />
           <div className="pt-5" />
           {/* Status */}
-          {/* <div className="flex flex-row gap-8 w-full">
-            <div className="flex flex-col w-3/12">
-              <div className="">
-                <p className="text-utility-gray-700 font-medium text-base leading-5">
-                  {" "}
-                  Status
-                </p>
-                <p className="text-tertiary font-normal text-sm leading-4.5">
-                  {" "}
-                  Activating a status adjusts the user&apos;s login access,
-                  feature availability, and permitted actions.
-                </p>
-              </div>
-            </div>
-            <div className="w-5/12">
-              <label className="inline-flex items-center me-5 cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="sr-only peer"
-                  checked={formData.activeStatus}
-                  onChange={handleSwitchChange}
-                />
-                <div className="relative w-9 h-5 bg-disabled-subtle rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand-solid"></div>
-                <span className="ms-3 text-base font-medium leading-5 text-grey-light-700">
-                  Active
-                </span>
-              </label>
-            </div>
-          </div> */}
+
           {/* Account deletion */}
           <div className="flex flex-row gap-8 w-full">
             <div className="flex flex-col w-3/12">
